@@ -2,9 +2,9 @@
 
 3 lista beolvasása fájlból :
 
-Könyv címe:
-Könyv szerzője:
-ki kölcsönözhetö a könyv vagy nem :
+1. Könyv címe:
+2. Könyv szerzője:
+3. ki kölcsönözhetö a könyv vagy nem :
 
 menüpontok:
 
