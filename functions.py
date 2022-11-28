@@ -18,6 +18,6 @@ def konyveklistaja():
     for egysor in file:
         darabolt=egysor.strip().split(',')
     cim.append(darabolt[0])
-    szerzö.append(float(darabolt[1]))
+    szerzö.append((darabolt[1]))
     megtalalhato.append(float(darabolt[2]))
     file.close()
