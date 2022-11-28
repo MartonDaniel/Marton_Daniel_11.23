@@ -4,10 +4,10 @@ valasztas=""
 while valasztas!='0':
     valasztas=menu()
     if valasztas=="1":
-        konyveklistaja()
+        fajlbeolvasása()
     elif valasztas=='2':
         system('cls')
-        pass
+        konyveklistaja()
     elif valasztas=='3':
         system('cls')
         pass

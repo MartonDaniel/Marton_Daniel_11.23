@@ -12,7 +12,7 @@ def menu():
     print('5 - könyv törlése a listából')
     return input('Választás: ')
 
-def konyveklistaja():
+def fajlbeolvasása():
     file=open('Books.csv','r',encoding="utf-8")
     file.readline()
     for egysor in file:
@@ -21,3 +21,15 @@ def konyveklistaja():
     szerzö.append((darabolt[1]))
     megtalalhato.append(float(darabolt[2]))
     file.close()
+
+def konyveklistaja():
+    system('cls')
+    for cím in cim:
+        print(f'{cím}')
+    input()
+
+def szerzoklistaja():
+    for szerző in szerzö:
+        print(f'{szerző}')
+    input()
+
