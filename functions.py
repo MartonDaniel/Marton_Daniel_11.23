@@ -45,3 +45,7 @@ def end(cim,szerzö,megtalalhato):
     file=open("Books.csv","a", encoding="utf-8")
     file.write(f'\n{cim},{szerzö},{megtalalhato}')
     file.close()
+
+#def kikölcsönzes()
+# :system("cls")
+# kiír()
