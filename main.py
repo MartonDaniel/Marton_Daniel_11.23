@@ -1,13 +1,16 @@
 from functions import *
 from os import system
+
+fajlbeolvasása()
+
 valasztas=""
 while valasztas!='0':
     valasztas=menu()
     if valasztas=="1":
-        fajlbeolvasása()
+        
+        kiír()
     elif valasztas=='2':
-        system('cls')
-        konyveklistaja()
+        Újkönyv()
     elif valasztas=='3':
         system('cls')
         pass

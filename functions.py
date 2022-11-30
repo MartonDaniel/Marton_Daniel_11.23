@@ -5,7 +5,7 @@ def menu():
     system('cls')
     print("---------MENÜ---------")
     print('0 - Kilépés')
-    print('1 - összes könyv listázása')
+    print('1 - Könyveklistája')
     print('2 - új könyv hozzáadása a listához')
     print('3 - könyv kikölcsönzése')
     print('4 - könyv visszahozása a könyvtárba')
@@ -17,19 +17,31 @@ def fajlbeolvasása():
     file.readline()
     for egysor in file:
         darabolt=egysor.strip().split(',')
-    cim.append(darabolt[0])
-    szerzö.append((darabolt[1]))
-    megtalalhato.append(float(darabolt[2]))
+        cim.append(darabolt[0])
+        szerzö.append((darabolt[1]))
+        megtalalhato.append((darabolt[2]))
+    file.close
+
+def kiír():
+    system("cls")
+    print("Könyvek listája")
+    for i in range(0,len(cim)):
+        print(f"\t {i+1}.{(cim[i])}, {(szerzö[i])}, {(megtalalhato[i])}")
+    input()
+
+
+def Újkönyv():
+    system("cls")
+    print("Új könyv felvétele")
+    ujkonyv=input("Kérem adja meg az új könyv címét!")
+    cim.append(ujkonyv)
+    ujszerzo=input("Kérem adja meg az új könyv szerzőjét!")
+    szerzö.append(ujszerzo)
+    megtalalhato=1
+    end(ujkonyv,ujszerzo,megtalalhato)
+    input("")
+
+def end(cim,szerzö,megtalalhato):
+    file=open("Books.csv","a", encoding="utf-8")
+    file.write(f'\n{cim},{szerzö},{megtalalhato}')
     file.close()
-
-def konyveklistaja():
-    system('cls')
-    for cím in cim:
-        print(f'{cím}')
-    input()
-
-def szerzoklistaja():
-    for szerző in szerzö:
-        print(f'{szerző}')
-    input()
-
