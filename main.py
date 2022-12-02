@@ -13,10 +13,10 @@ while valasztas!='0':
         Újkönyv()
     elif valasztas=='3':
         system('cls')
-        pass
+        kikölcsönzes()
     elif valasztas=='4':
         system('cls')
         pass
     elif valasztas=='5':
         system('cls')
-        pass
+        konyvTorlese()

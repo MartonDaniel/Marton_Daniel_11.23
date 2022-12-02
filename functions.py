@@ -39,13 +39,44 @@ def Újkönyv():
     szerzö.append(ujszerzo)
     megtalalhato=1
     end(ujkonyv,ujszerzo,megtalalhato)
-    input("")
+    input("A könyv sikeresen fel lett véve az adatbázisba")
 
 def end(cim,szerzö,megtalalhato):
     file=open("Books.csv","a", encoding="utf-8")
     file.write(f'\n{cim},{szerzö},{megtalalhato}')
     file.close()
 
-#def kikölcsönzes()
-# :system("cls")
-# kiír()
+def kikölcsönzes():
+    system("cls")
+    kiír()
+    sSz=int(input("Válassza ki a kívánt könyv sorszámát "))
+    cim(sSz-1)
+    szerzö(sSz-1)
+    if megtalalhato==1:
+        megtalalhato=0
+        print ("A könyv kikölcsönzése sikeres volt ")
+    elif megtalalhato==0:
+        print("A könyv jelenleg kikölcsönzés alatt van")
+    input()    
+     
+
+
+
+def konyvTorlese():
+    system('cls')
+    print('----KÖNYV TÖRLÉSE---\n')
+    kiír()
+    sSz=int(input('Melyik könyvet töröljünk a listából? Adja meg a sorszámát: '))
+    cim.pop(sSz-1)
+    szerzö.pop(sSz-1)
+    megtalalhato.pop(sSz-1)
+    mentesFajlba()
+    input('Sikeres törlés.')
+
+def mentesFajlba():
+    file=open('jumps.csv','w',encoding='utf-8')
+    for i in range(len(cim)):
+        file.write(f'{cim[i]};{szerzö[i]};{megtalalhato[i]} ')
+        if i<len(cim)-1:
+            file.write('\n')
+    file.close()
