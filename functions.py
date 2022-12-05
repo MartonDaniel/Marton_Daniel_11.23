@@ -14,9 +14,10 @@ def menu():
 
 def fajlbeolvasása():
     file=open('Books.csv','r',encoding="utf-8")
-    file.readline()
+    global elsosor
+    elsosor=file.readline()
     for egysor in file:
-        darabolt=egysor.strip().split(',')
+        darabolt=egysor.strip().split(';')
         cim.append(darabolt[0])
         szerzö.append((darabolt[1]))
         megtalalhato.append((darabolt[2]))
@@ -50,16 +51,20 @@ def kikölcsönzes():
     system("cls")
     kiír()
     sSz=int(input("Válassza ki a kívánt könyv sorszámát "))
-    cim(sSz-1)
-    szerzö(sSz-1)
-    if megtalalhato==1:
-        megtalalhato=0
+    # cim(sSz-1)
+    # szerzö(sSz-1)
+    if megtalalhato[sSz-1]=='1':
+        megtalalhato[sSz-1]='0'
         print ("A könyv kikölcsönzése sikeres volt ")
-    elif megtalalhato==0:
+        mentesFajlba()
+    else:
         print("A könyv jelenleg kikölcsönzés alatt van")
     input()    
      
-
+#def könyvvisszahozása():
+ #   system("cls")
+  #  kiír()
+   # sSz=int(input())
 
 
 def konyvTorlese():
@@ -74,7 +79,9 @@ def konyvTorlese():
     input('Sikeres törlés.')
 
 def mentesFajlba():
-    file=open('jumps.csv','w',encoding='utf-8')
+    file=open('Books.csv','w',encoding='utf-8')
+    file.write(elsosor)
+
     for i in range(len(cim)):
         file.write(f'{cim[i]};{szerzö[i]};{megtalalhato[i]} ')
         if i<len(cim)-1:
