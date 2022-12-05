@@ -61,11 +61,17 @@ def kikölcsönzes():
         print("A könyv jelenleg kikölcsönzés alatt van")
     input()    
      
-#def könyvvisszahozása():
- #   system("cls")
-  #  kiír()
-   # sSz=int(input())
-
+def könyvvisszahozása():
+    system("cls")
+    kiír()
+    sSz=int(input("Válassza ki a vissza hozott könyv sorszámát"))
+    if megtalalhato[sSz-1]=="0":
+        megtalalhato[sSz-1]="1"
+        print ("A könyv visszahozása sikeres volt")
+        mentesFajlba()
+    else:
+        print("A könyvet nem tudjuk vissza venni jelen pillanatban ")
+    input()
 
 def konyvTorlese():
     system('cls')

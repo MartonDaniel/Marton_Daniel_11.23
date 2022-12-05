@@ -16,7 +16,7 @@ while valasztas!='0':
         kikölcsönzes()
     elif valasztas=='4':
         system('cls')
-        pass
+        könyvvisszahozása()
     elif valasztas=='5':
         system('cls')
         konyvTorlese()
